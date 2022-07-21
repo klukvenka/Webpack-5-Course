@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 function buttonClicked() {
   const el = document.getElementById('header');
   el.innerHTML = 'Hey I have updated the code!';
