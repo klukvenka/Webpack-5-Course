@@ -1,5 +1,12 @@
-function subtract(a, b) {
+// ------------------------------ES6 FORMAT------------------------------
+const subtract = (a, b) => {
   return a - b;
-}
+};
+export default subtract;
 
-module.exports = subtract;
+// ------------------------------COMMONJS FORMAT------------------------------
+//   function subtract(a, b) {
+//     return a - b;
+//   }
+
+// module.exports = subtract;
