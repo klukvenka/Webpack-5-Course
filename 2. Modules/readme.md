@@ -1,7 +1,14 @@
-** Implementation here is not important. The main focus is modules**
+`Note: Implementation here is not important. The main focus is modules`
 
-run `node main.js` to run the code with CommonJS format
+## JS Modules
+There are several modules in JS. The ones that will be covered are CommonJS and ES6.
 
-run `npx webpack --config webpack.config.js --mode development` to run the code with CommonJS format with ES6 format
+### CommonJS --> require
+Run `node main.js` to run the code with CommonJS format (currently is commented in files)
 
-And then `node dist/bundle.js`
+### ES6 --> import/export
+NodeJS doesn’t understand import/export keywords. So here webpack.config.js is needed. 
+
+1. Run `npx webpack --config webpack.config.js --mode development` to compile the ES6 code into the format that is NodeJS can understand
+(the file compiled is "bundle.js")
+2. Run `node dist/bundle.js` to run the code
