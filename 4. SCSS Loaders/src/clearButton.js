@@ -1,4 +1,4 @@
-import style from './clearButton.css';
+import style from './clearButton.scss';
 
 const el = document.createElement('button');
 el.innerHTML = 'Clear';
