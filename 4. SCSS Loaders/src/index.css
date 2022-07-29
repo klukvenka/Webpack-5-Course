@@ -1,8 +1,8 @@
-#header{
+#header {
     text-decoration: underline;
     color: blue;
-}
-
-:global(.button){
+  }
+  
+  :global(.button){
     background: yellow;
-}
+  }

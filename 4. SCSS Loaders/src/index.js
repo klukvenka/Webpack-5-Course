@@ -1,17 +1,17 @@
-import style from './index.scss';
 import _ from 'lodash';
+import style from './index.css';
 import './clearButton';
 
 console.log(style);
 
 const btn1 = document.getElementById('button1');
 
-btn1.addEventListener('click', function buttonClicked() {
+btn1.addEventListener('click', function () {
   const el = document.getElementById('header');
-  el.innerHTML = 'Hey I have updated the code!';
+  el.innerHTML = 'Hey i have updated the code !';
 
-  const listItems = ['Apple', 'Orange', 'Banana'];
-  const ul = document.getElementById('shoppinglist');
+  const listItems = ['Apple', 'orange', 'Banana'];
+  const ul = document.getElementById('shoppingList');
   _.forEach(listItems, function (item) {
     const tempEl = document.createElement('li');
     tempEl.innerHTML = item;
@@ -19,4 +19,4 @@ btn1.addEventListener('click', function buttonClicked() {
   });
 });
 
-btn1.classList.add(style.button);
+btn1.classList.add([style.button]);
