@@ -18,13 +18,13 @@ module.exports = {
       template: path.resolve(__dirname, 'src/index.html'), // template that is going to be used
       chunks: ['index'], // dependencies of the particulate template, in our case index.html file depends on the index entry (index.js)
       inject: true, // inject the deoendency in the template
-      filename: 'index.html',
+      filename: 'index.html', // have to be specified when we have 2 of these plugins
     }),
     new htmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/products.html'),
       chunks: ['product'],
       inject: true,
-      filename: 'product.html', // have to be specified when we have 2 of these plugins
+      filename: 'products.html',
     }),
   ],
 };
