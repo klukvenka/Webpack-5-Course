@@ -1,4 +1,4 @@
-** Implementation here is not important. The main focus is adding css loader**
+`Note: the implementation here is not important. The main focus is adding css loader`
 
 It is the same application as in the section "1. Getting Started" + some css
 

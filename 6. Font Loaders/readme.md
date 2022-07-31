@@ -1,4 +1,4 @@
-** Implementation here is not important. The main focus is adding font loaders**
+`Note: the implementation here is not important. The main focus is adding font loaders`
 
 It is the same application as in the section "5. Image Loaders" + font loader
 
