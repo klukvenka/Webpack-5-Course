@@ -9,4 +9,4 @@ To install the plugin `npm i -D html-webpack-plugin` has been used.
 1. run `npm run build` to compile the code with webpack
 2. Open **dist/index.html** to see the page
 
-In this example the assets and index.css were copied manually into the dist/ directory. The next section is going to intoduce automated webpack
+In this example the assets and index/product.css were copied manually into the dist/ directory. The next section is going to intoduce automated webpack
