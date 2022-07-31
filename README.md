@@ -7,3 +7,5 @@ The course link: https://mirantis.udemy.com/course/webpack-5-ninja-build-micro-f
 3. CSS Loaders - the main points of loading css + order
 4. SCSS Loaders - loading scss and css together
 5. Image Loaders - loading images
+6. Font Loaders - loading particular fonts
+7. Multiple Entries, HTMLWebpack plugin, Webpack Dev server
