@@ -14,18 +14,41 @@ module.exports = {
       template: './src/index.html',
       filename: 'index.html',
     }),
+    new MiniCssExtractPlugin(),
   ],
   // adding a dev server
   devServer: {
     static: {
       directory: path.resolve(__dirname, 'dist'),
-      port: 9000,
-      open: true, // also ccan be specified as a flag to open the localhost automatically when starting the server
     },
+    port: 9000,
+    open: true, // also can be specified as a flag to open the localhost automatically when starting the server
   },
   module: {
-    // first of all we have to be able to load css and scss files
     rules: [
+      {
+        test: /\.(js|jsx)$/,
+        include: path.resolve(__dirname, 'src'), // where our loader should find these particular files
+        exclude: path.resolve(__dirname, 'node_modules'), // not to scan js in node_modules
+        use: [
+          // the following setup is required for babel configuration
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                [
+                  '@babel/preset-env',
+                  {
+                    targets: 'defaults',
+                  },
+                ],
+                '@babel/preset-react',
+              ],
+            },
+          },
+        ],
+      },
+      // we have to be able to load css and scss files
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader'], // MiniCss used instead of style-loader so the css won't be added directly to html file built
@@ -40,5 +63,10 @@ module.exports = {
         type: 'asset/resource',
       },
     ],
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
   },
 };
