@@ -23,6 +23,7 @@ module.exports = {
     },
     port: 9000,
     open: true, // also can be specified as a flag to open the localhost automatically when starting the server
+    historyApiFallback: true, // for routing in react app
   },
   module: {
     rules: [
@@ -51,11 +52,34 @@ module.exports = {
       // we have to be able to load css and scss files
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'], // MiniCss used instead of style-loader so the css won't be added directly to html file built
+        use: [
+          MiniCssExtractPlugin.loader, // MiniCss used instead of style-loader so the css won't be added directly to html file built
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [['postcss-preset-env', {}]],
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.s[ac]ss$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [['postcss-preset-env', {}]],
+              },
+            },
+          },
+          'sass-loader',
+        ],
       },
       // images
       {
