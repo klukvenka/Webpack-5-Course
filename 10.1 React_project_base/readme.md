@@ -2,5 +2,10 @@
 
 The website is a brief example of a multiple page movies website (similar to Netflix).
 
-1. run `npm run build` to compile the code with webpack or `npm run serve` to run the dev server
+To build:
+
+1. run `npm run build` to compile the code with webpack
 2. Open **dist/index.html** to see the page
+
+To develop:
+`npm run serve` to run the dev server
