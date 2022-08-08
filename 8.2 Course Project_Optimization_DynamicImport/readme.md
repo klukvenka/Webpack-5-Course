@@ -2,7 +2,7 @@
 
 The website is an example of an educational website similar to udemy.
 
-The optimization (chunks) helps in cases when both bundles (in this case 2: index and courses) share many dependencies together including lodash, jquery and so on.
+The optimization (
 
 **Webpack dependencies** that were installed:
 `npm i -D webpack-bundle-analyzer`

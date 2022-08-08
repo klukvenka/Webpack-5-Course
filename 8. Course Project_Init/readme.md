@@ -10,7 +10,7 @@ The website is an example of an educational website similar to udemy.
 
 To build:
 
-1. run `npm run build` to compile the code with webpack
+1. run `npm run dev` to compile the code with webpack
 2. Open **dist/index.html** to see the page
 
 To develop:
