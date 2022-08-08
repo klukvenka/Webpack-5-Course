@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // helps to inject all the bundles into html file
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // optimization style-loader that gives a separate file
-const EslintPlugin = require('eslint-webpack-plugin');
+// const EslintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
   mode: 'development', // running it in the development mode
@@ -11,7 +11,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
   plugins: [
-    new EslintPlugin(),
+    // new EslintPlugin(),
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: 'index.html',
@@ -49,12 +49,12 @@ module.exports = {
               ],
             },
           },
-          {
-            loader: 'eslint-loader',
-            options: {
-              fix: true,
-            },
-          },
+          // {
+          //   loader: 'eslint-loader',
+          //   options: {
+          //     fix: true,
+          //   },
+          // },
         ],
       },
       // we have to be able to load css and scss files

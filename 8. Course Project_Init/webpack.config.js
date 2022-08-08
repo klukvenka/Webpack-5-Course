@@ -1,5 +1,6 @@
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -21,8 +22,12 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /.s[ac]ss$/, // either sass or scss
+        test: /\.s[ac]ss$/, // either sass or scss
         use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+      {
+        test: /\.(png|jpeg|jpg|gif)$/, // either sass or scss
+        type: 'asset/resource',
       },
     ],
   },
@@ -36,6 +41,17 @@ module.exports = {
       template: './src/pages/courses.html',
       chunks: ['courses'],
       filename: 'courses.html',
+    }),
+    new CopyPlugin({
+      // patterns - things that need to be copied
+      // here we wanna copy assets/images/banner-image.png
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src/assets/images/*'),
+          to: path.resolve(__dirname, 'dist'),
+          context: 'src', // to start to copy folders without src
+        },
+      ],
     }),
   ],
 };
